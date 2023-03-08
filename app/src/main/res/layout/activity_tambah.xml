@@ -16,12 +16,7 @@
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"/>
 
-    <EditText
-        android:id="@+id/et_klub"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Klub"
-        android:textSize="21sp"/>
+
     <EditText
         android:id="@+id/et_nama"
         android:layout_width="match_parent"
@@ -33,6 +28,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama Punggung"
+        android:textSize="21sp"/>
+    <EditText
+        android:id="@+id/et_klub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Klub"
         android:textSize="21sp"/>
 
     <Button

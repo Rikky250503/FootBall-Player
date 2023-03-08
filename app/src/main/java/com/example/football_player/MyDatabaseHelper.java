@@ -1,5 +1,6 @@
 package com.example.football_player;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -25,7 +26,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String Query = "CREATE TABLE " + TABLE_NAME + "( " +
-                FIELD_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 FIELD_NAMA + " VARCHAR(50), " +
                 FIELD_NOMOR + " VARCHAR(2), " +
                 FIELD_KLUB + " VARCHAR(50) " +
@@ -37,6 +38,20 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        String Query = "DROP TABLE IF EXISTS " + TABLE_NAME;
+        db.execSQL(Query);
+        onCreate(db);
+    }
 
+    public long tambahPlayer(String nama, String nomor, String klub)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(FIELD_NAMA,"nama");
+        cv.put(FIELD_NOMOR,"nomor");
+        cv.put(FIELD_KLUB,"klub");
+
+        long eksekusi = db.insert(TABLE_NAME,null,cv);
+        return eksekusi;
     }
 }
