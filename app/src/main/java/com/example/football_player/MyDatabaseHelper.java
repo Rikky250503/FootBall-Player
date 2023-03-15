@@ -48,11 +48,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(FIELD_NAMA,"nama");
-        cv.put(FIELD_NOMOR,"nomor");
-        cv.put(FIELD_KLUB,"klub");
+        cv.put(FIELD_NAMA,nama);
+        cv.put(FIELD_NOMOR,nomor);
+        cv.put(FIELD_KLUB,klub);
 
-        long eksekusi = db.insert(TABLE_NAME,null,cv);
+        long eksekusi = db.insert(TABLE_NAME,null, cv);
         return eksekusi;
     }
 

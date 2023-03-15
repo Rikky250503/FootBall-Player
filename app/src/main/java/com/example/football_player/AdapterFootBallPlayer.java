@@ -19,11 +19,7 @@ public class AdapterFootBallPlayer extends RecyclerView.Adapter<AdapterFootBallP
     private Context ctx;
     private ArrayList arrID,arrNama, arrNomor, arrKlub;
 
-    public AdapterFootBallPlayer(ArrayList arrID) {
-        this.arrID = arrID;
-    }
-
-    public AdapterFootBallPlayer(MainActivity mainActivity, ArrayList<String> arrID, ArrayList<String> arrNama, ArrayList<String> arrNomor, ArrayList<String> arrKlub) {
+    public AdapterFootBallPlayer(MainActivity mainActivity, ArrayList arrID, ArrayList arrNama, ArrayList arrNomor, ArrayList arrKlub) {
         this.ctx = ctx;
         this.arrID = arrID;
         this.arrNama = arrNama;
@@ -38,6 +34,7 @@ public class AdapterFootBallPlayer extends RecyclerView.Adapter<AdapterFootBallP
         View varView = LayoutInflater.from(ctx).inflate(R.layout.list_item_player,parent,false);
         return new ViewHolderPlayer(varView);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPlayer holder, int position) {

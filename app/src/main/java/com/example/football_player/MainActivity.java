@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteToArraylist();
 
-        adPlayer = new AdapterFootBallPlayer(MainActivity.this, arrID,arrNama,arrNomor,arrKlub);
+        adPlayer = new AdapterFootBallPlayer(MainActivity.this ,arrID,arrNama,arrNomor,arrKlub);
 
         rvPlayer.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         rvPlayer.setAdapter(adPlayer);
