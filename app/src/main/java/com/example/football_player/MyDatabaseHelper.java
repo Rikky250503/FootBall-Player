@@ -66,4 +66,22 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
         return  varcursor;
     }
+
+    public long hapusPlayer(String id){
+        SQLiteDatabase db =this.getWritableDatabase();
+        long eksekusi = db.delete(TABLE_NAME, "id =?", new String[]{id});
+        return  eksekusi;
+    }
+
+    public long ubahPlayer(String id,String nama,String nomor, String klub){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(FIELD_NAMA,nama);
+        cv.put(FIELD_NOMOR,nomor);
+        cv.put(FIELD_KLUB,klub);
+
+        long ekssekusi = db.update(TABLE_NAME, cv,"id = ?", new String[]{id});
+        return ekssekusi;
+    }
 }
