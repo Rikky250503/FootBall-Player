@@ -58,7 +58,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor bacaDataPlayer(){
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA ;
+        String query = "SELECT * FROM " + TABLE_NAME + " ORDER BY " + FIELD_NAMA + ";";
 
         Cursor varcursor = null;
         if(db != null){
